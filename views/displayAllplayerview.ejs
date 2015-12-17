@@ -1,0 +1,21 @@
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Player</th><th> Weapon </th><th> Armor </th><th> Asthetic </th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/Player/?id=<%= rs[i].playerid %>"> <%= rs[i].playername %></a></td>
+            <td><a href="/Weapon/?id=<%= rs[i].weaponid %>"> <%= rs[i].weaponname %> </a></td>
+            <td><a href="/Armor/?id=<%= rs[i].armorid %>"> <%= rs[i].armorname %> </a></td>
+            <td><a href="/Asthetic/?id=<%= rs[i].astheticid %>"> <%= rs[i].astheticname %> </a></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No data is entered into the PlayerView database table.
+    <% } %>
+</div>
+
+<div style="margin-top:10px;">
+    <a href="/Player/create">Create New Guardian</a>
+</div>

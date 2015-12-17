@@ -1,0 +1,18 @@
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Name</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/Asthetic/?id=<%= rs[i].id %>"> <%= rs[i].name %></a></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No Asthetic are entered into the Asthetic database table.
+    <% } %>
+</div>
+
+<div style="margin-top:10px;">
+    <a href="/Asthetic/create">Create New Asthetic</a>
+</div>

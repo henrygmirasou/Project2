@@ -1,0 +1,35 @@
+<% include partials/header %>
+<h1>Guardian Creation</h1>
+<p>
+<form action="/Player/save/">
+    <label for="name">Name</label> <input type="text" id="name" name="name" /><br />
+
+    <label for="weapon">Starting Weapon</label> <select id="weapon" name="weapon" class="form-control">
+        <% Weapon.forEach(function(entry) { %>
+        <% var rs = entry.name + " " + entry.description + ", " + entry.damage; %>
+        <option value="<%= entry.id %>"><%= rs %></option>
+        <% }); %>
+    </select>
+    <br />
+
+    <label for="armor">Armor</label> <select id="weapon" name="weapon" class="form-control">
+        <% Armor.forEach(function(entry) { %>
+        <% var rs = entry.name + " " + entry.description + ", " + entry.defense; %>
+        <option value="<%= entry.id %>"><%= rs %></option>
+        <% }); %>
+    </select>
+    <br />
+
+    <label for="asthetic">Asthetic</label> <select id="weapon" name="weapon" class="form-control">
+        <% Asthetic.forEach(function(entry) { %>
+        <% var rs = entry.name + " " + entry.description + ", " + entry.bonus; %>
+        <option value="<%= entry.id %>"><%= rs %></option>
+        <% }); %>
+    </select>
+
+
+    <label for="armor">Armor</label> <input type="text" id="armor" name="armor" /><br />
+    <label for="asthetic">Asthetic</label> <input type="text" id="asthetic" name="asthetic" /><br />
+    <input type="submit" />
+</form>
+<% include partials/footer %>

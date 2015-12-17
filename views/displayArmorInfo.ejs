@@ -1,0 +1,8 @@
+<% if(rs.length > 0) { %>
+ID: <%= rs[0].id %><br />
+Name: <%= rs[0].name %><br />
+Description: <%= rs[0].description %><br />
+Defense: <%= rs[0].defense %> <br />
+<% } else { %>
+No Armor piece matched this Armor id <%= id %>.
+<% } %>
