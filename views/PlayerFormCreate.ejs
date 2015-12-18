@@ -12,7 +12,7 @@
     </select>
     <br />
 
-    <label for="armor">Armor</label> <select id="weapon" name="weapon" class="form-control">
+    <label for="armor">Starting Armor</label> <select id="weapon" name="weapon" class="form-control">
         <% Armor.forEach(function(entry) { %>
         <% var rs = entry.name + " " + entry.description + ", " + entry.defense; %>
         <option value="<%= entry.id %>"><%= rs %></option>
@@ -20,16 +20,13 @@
     </select>
     <br />
 
-    <label for="asthetic">Asthetic</label> <select id="weapon" name="weapon" class="form-control">
+    <label for="asthetic">Starting Asthetic</label> <select id="weapon" name="weapon" class="form-control">
         <% Asthetic.forEach(function(entry) { %>
         <% var rs = entry.name + " " + entry.description + ", " + entry.bonus; %>
         <option value="<%= entry.id %>"><%= rs %></option>
         <% }); %>
     </select>
-
-
-    <label for="armor">Armor</label> <input type="text" id="armor" name="armor" /><br />
-    <label for="asthetic">Asthetic</label> <input type="text" id="asthetic" name="asthetic" /><br />
+    <br />
     <input type="submit" />
 </form>
 <% include partials/footer %>

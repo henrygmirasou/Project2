@@ -1,14 +1,17 @@
 var express = require('express');
 var router = express.Router();
-var accountDal = require('../dal/account');
-
+var PlayerDal = require('../dal/Player');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+    res.send('respond with a resource');
 });
 router.get('/create', function(req, res, next) {
-  res.render('userFormCreate.ejs',{ subtitle: 'Express' });
+    res.render('userFormCreate.ejs',{ subtitle: 'Express' });
+});
+
+router.get('/About', function(req, res, next) {
+    res.render('About.ejs',{ subtitle: 'Express' });
 });
 
 router.get('/save', function(req, res, next) {
@@ -17,14 +20,14 @@ router.get('/save', function(req, res, next) {
     console.log("the email submitted was:" + req.query.email);
     console.log("the password for this user is:" + req.query.password);
 
-    accountDal.Insert(req.query, function(err, result){
-          if (err) {
+    PlayerDal.Insert(req.query, function(err, result){
+        if (err) {
             res.send(err);
-          }
-          else {
+        }
+        else {
             res.send("Successfully saved the data.");
-          }
-        });
-  });
+        }
+    });
+});
 
 module.exports = router;

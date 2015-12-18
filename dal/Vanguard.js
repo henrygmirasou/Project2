@@ -19,6 +19,8 @@ exports.GetAll = function(callback) {
 }
 
 
+
+
 exports.GetByID = function(id, callback) {
     console.log(id);
     var query = 'SELECT * FROM Vanguard WHERE id=' + id;

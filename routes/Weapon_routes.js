@@ -37,7 +37,9 @@ router.get('/save', function(req, res, next) {
             res.send(err);
         }
         else {
-            res.send("Successfully saved the data.");
+            res.send("Successfully saved the data."+
+                " <div style='margin-top:10px;'> <a href='/Weapon/create'>Create New Weapons</a> </div>" +
+                " <div style='margin-top:10px;'> <a href='/Weapon/all'>Back to inventory</a> </div>");
         }
     });
 });

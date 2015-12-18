@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var playerviewDal   = require('../dal/playerview');
 
-router.get('/', function(req, res) {
+router.get('/all', function(req, res) {
     playerviewDal.GetAll(function (err, result) {
             if (err) throw err;
             //NOTE: res.send() will return plain text to the browser.

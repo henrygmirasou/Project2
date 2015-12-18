@@ -6,7 +6,7 @@ var connection = mysql.createConnection(db.config);
 
 exports.GetAll = function(callback) {
     connection.query('SELECT * FROM Player;',
-        function (err, result) {
+        function (err, result, result2, reslut3) {
             if(err) {
                 console.log(err);
                 callback(true);
@@ -72,14 +72,14 @@ exports.GetByID = function(id, callback) {
 }
 
 
-exports.Insert = function(Player_info, callback) {
-    console.log(Player_info);
+exports.Insert = function(Playerinfoname, Playerinfoweapon, Playerinfoarmor, Playerinfoasthetic, callback) {
+    console.log(Playerinfoname, Playerinfoweapon, Playerinfoarmor, Playerinfoasthetic);
 /*<!-- make a dropdown option --> */
     var dynamic_query = 'INSERT INTO Player (name, weapon, armor, asthetic) VALUES (' +
-        '\'' + Player_info.name + '\', ' +
-        '\'' + Player_info.weapon + '\', ' +
-        '\'' + Player_info.armor + '\', ' +
-        '\'' + Player_info.asthetic + '\'' +
+        '\'' + Playerinfoname.name + '\', ' +
+        '\'' + Playerinfoweapon.weapon + '\', ' +
+        '\'' + Playerinfoarmor.armor + '\', ' +
+        '\'' + Playerinfoasthetic.asthetic + '\'' +
         ');';
     console.log("test");
     console.log(dynamic_query);

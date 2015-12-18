@@ -37,7 +37,9 @@ router.get('/save', function(req, res, next) {
             res.send(err);
         }
         else {
-            res.send("Successfully saved the data.");
+            res.send("Successfully saved the data." +
+                " <div style='margin-top:10px;'> <a href='/Asthetic/create'>Create New Asthetic</a> </div>" +
+                " <div style='margin-top:10px;'> <a href='/Asthetic/all'>Back to Inventory</a> </div>");
         }
     });
 });

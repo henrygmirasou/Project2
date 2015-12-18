@@ -71,6 +71,21 @@ exports.GetByID = function(id, callback) {
     );
 }
 
+exports.GetInventory = function(id, callback) {
+    console.log(id);
+    var query = 'Select * from INVENTORY where Faction =' + id;
+    console.log(query);
+    connection.query(query,
+        function (err, result) {
+            if(err) {
+                console.log(err);
+                callback(true);
+                return;
+            }
+            callback(false, result);
+        }
+    );
+}
 
 exports.Insert = function(Faction_info, callback) {
     console.log(Faction_info);

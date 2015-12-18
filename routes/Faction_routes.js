@@ -18,9 +18,7 @@ router.get('/', function (req, res) {
     FactionDal.GetByID(req.query.id, function (err, result) {
             if (err) throw err;
 
-            res.render('displayFactionInfo.ejs', {rs: result, id: req.query.id});
-        }
-    );
+            res.render('displayFactionInfo.ejs', {rs: result, id: req.query.id});});
 });
 
 router.get('/create', function(req, res, next) {
@@ -40,6 +38,5 @@ router.get('/save', function(req, res, next) {
         }
     });
 });
-
 
 module.exports = router;

@@ -14,7 +14,8 @@ var Armor = require('./routes/Armor_routes');
 var Asthetic = require('./routes/Asthetic_routes');
 var Player = require('./routes/Player_routes');
 var playerview = require('./routes/playerview_routes');
-
+var factionitemsview = require('./routes/factionitemsview_routes');
+var vanguarditemsview = require('./routes/vanguarditemsview_routes');
 
 var app = express();
 
@@ -39,7 +40,8 @@ app.use('/Armor', Armor);
 app.use('/Asthetic', Asthetic);
 app.use('/Player', Player);
 app.use('/playerview', playerview);
-
+app.use('/factionitemsview', factionitemsview);
+app.use('/vanguarditemsview', vanguarditemsview);
 
 
 // catch 404 and forward to error handler

@@ -27,22 +27,15 @@ router.get('/', function (req, res) {
 });
 
 router.get('/create', function(req, res, next) {
-    WeaponDal.GetAll(function(err, result){
-        ArmorDal.GetAll(function (err, resultar){
-            AstheticDal.GetAll(function (err, resultas) {
-                res.render('PlayerFormCreate.ejs', {subtitle: 'Express', Asthetic: resultas, Armor: resultar, Weapon: result});
-            });
+        ArmorDal.GetAll(function (err, result) {
+            res.render('PlayerFormCreate.ejs', {subtitle: 'Express', Armor: result});
         });
-
-    });
-    ArmorDal.GetAll(function (err, result){
-        res.render('PlayerFormCreate.ejs', {subtitle: 'Express', Armor: result});
-
-    });
-    AstheticDal.GetAll(function (err, result){
-        res.render('PlayerFormCreate.ejs', {subtitle: 'Express', Asthetic: result});
-
-    });
+         WeaponDal.GetAll(function(err, result){
+            res.render('PlayerFormCreate.ejs', {subtitle: 'Express', Weapon: result});
+        });
+        AstheticDal.GetAll(function(err, result){
+            res.render('PlayerFormCreate.ejs', {subtitle: 'Express', Asthetic: result});
+        });
 });
 
 
@@ -58,7 +51,7 @@ router.get('/save', function(req, res, next) {
         else {
             res.send("Successfully saved the data. Create another Player?" +
                 " <div style='margin-top:10px;'> <a href='/Player/create'>Create New Guardian</a> </div>" +
-                    "else back to view" +
+                " <div style='margin-top:10px;'> <a href='/'>Home</a> </div>" +
                 " <div style='margin-top:10px;'> <a href='/Player/all'>All Guardians</a> </div>");
 
 
